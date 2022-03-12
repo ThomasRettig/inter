@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-     "minify": "postcss docs/index.css > docs/index.css"
+     "minify": "postcss docs/lab/lab.css > docs/lab/lab.min.css"
    },
   "repository": {
     "type": "git",
