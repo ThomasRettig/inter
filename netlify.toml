@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "/lab"
+  status = 301
+  force = false
