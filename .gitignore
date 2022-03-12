@@ -14,6 +14,7 @@ _*.ignore
 .DS_Store
 nohup.out
 .vscode/
+node_modules
 
 build
 /_*
