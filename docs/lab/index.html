@@ -5,26 +5,24 @@
     <title>lab</title>
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="../inter.css" rel="stylesheet">
-    <script type="text/javascript">
+    <script>
+      // dark color scheme by default?
+      let defaultColorSceme = "light"
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        defaultColorSceme = "dark"
+        if (document.location.search.indexOf("invert-colors") == -1) {
+          document.documentElement.classList.add("color-scheme-dark")
+        }
+      }
 
-// dark color scheme by default?
-let defaultColorSceme = "light"
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  defaultColorSceme = "dark"
-  if (document.location.search.indexOf("invert-colors") == -1) {
-    document.documentElement.classList.add("color-scheme-dark")
-  }
-}
-
-// Safari?
-(function(u){ if (
-  u.indexOf('Safari/') != -1 &&
-  u.indexOf('Chrome/') == -1 &&
-  u.indexOf('Chromium/') == -1
-) {
-  document.documentElement.classList.add('safari')
-} })(navigator.userAgent);
-
+      // Safari?
+      (function(u){ if (
+        u.indexOf('Safari/') != -1 &&
+        u.indexOf('Chrome/') == -1 &&
+        u.indexOf('Chromium/') == -1
+      ) {
+        document.documentElement.classList.add('safari')
+      } })(navigator.userAgent);
     </script>
     <script type="text/javascript" src="samples.js?v=3.19"></script>
     <script type="text/javascript" src="build-version.js?v=3.19"></script>

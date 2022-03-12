@@ -10,21 +10,27 @@
 
   --font-family: Inter;
 }
+
 @supports (font-variation-settings: normal) {
-  :root { --font-family: 'Inter var'; }
+  :root {
+    --font-family: 'Inter var';
+  }
 }
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min-device-pixel-ratio: 1.5),
        only screen and (min-resolution: 1.5dppx) { :root {
   --displayScale: 2;
   --pixel: 0.5px;
 }}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2.5),
        only screen and (min-device-pixel-ratio: 2.5),
        only screen and (min-resolution: 2.5dppx) { :root {
   --displayScale: 3;
   --pixel: 0.34px;
 }}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 3.5),
        only screen and (min-device-pixel-ratio: 3.5),
        only screen and (min-resolution: 3.5dppx) { :root {
@@ -39,6 +45,7 @@
   --yellow: #FFE310;
   --blue:   rgb(3, 102, 214);
 }
+
 /* P3 wide gamut colors */
 @supports (color: color(display-p3 1 1 1)) { :root {
   --red:    color(display-p3 0.94 0.19 0.04);
@@ -125,6 +132,7 @@
 /* document ———————————————————————————————————————————————————————————————————————————— */
 
 * { margin:0; padding:0; font-synthesis: none; }
+
 body {
   --fgColorMax: var(--fgColor);
   background-color: var(--bgColor);
@@ -134,15 +142,19 @@ body {
   transition: all 168ms cubic-bezier(0.17, 0.65, 0.48, 1);
   transition-property: color, background;
 }
+
 .robotoFont {
   font-family: "Roboto", serif;
 }
+
 .systemFont {
   font-family: system-ui,-system,-system-ui,-apple-system,sans-serif;
 }
+
 .de-emphasize {
   color:#555;
 }
+
 a {
   color:#2984AA;
   text-decoration:inherit;
@@ -151,19 +163,26 @@ a {
   margin:0 -0.3em;
   border-radius:5px;
 }
-a:hover { color:#30C2FF; }
+
+a:hover {
+  color:#30C2FF;
+}
+
 p {
   padding: 24px;
   padding-top:12px;
+
 }
 h2 {
   font-weight:500;
   margin: 42px 18px 0 18px;
   padding: 6px;
+
 }
 i, cite, em, var, address, dfn {
   font-style: italic;
 }
+
 /*body.varfont i, body.varfont cite, body.varfont em, body.varfont var,
 body.varfont address, body.varfont dfn {
   font-style: oblique -10deg;
@@ -199,8 +218,11 @@ select {
   background-repeat: no-repeat;
   background-position: right center;
 }
+
 /* fix for Firefox issue:; */
-select option { font-family:var(--font-family),Inter; }
+select option {
+  font-family:var(--font-family), Inter;
+}
 
 input[type="number"]:focus,
 input[type="text"]:focus,
@@ -238,22 +260,20 @@ input[type="checkbox"] {
   position:relative;
   transition: all 168ms ease-out;
 }
+
 input[type="checkbox"]:focus {
   outline: none;
   box-shadow: 0 0 0 2px var(--bgColor), 0 0 0 4px var(--focus-color);
 }
+
 input[type="checkbox"]:active {
   /* trick to avoid flickering outline */
   box-shadow: none;
 }
+
 input[type="checkbox"]::after {
   --padding: calc(
-    calc(
-      calc(var(--checkbox-size) - var(--checkbox-handle-size))
-      / 2
-    )
-    - var(--checkbox-border)
-  );
+    calc(calc(var(--checkbox-size) - var(--checkbox-handle-size))/ 2)- var(--checkbox-border));
   content: "";
   background: var(--checkbox-fg);
   display:block;
@@ -266,17 +286,21 @@ input[type="checkbox"]::after {
   transform: translate(0, 0);
   transition: all 90ms ease-out; /*cubic-bezier(0.09, 0.49, 0.71, 0.98);*/
 }
+
 input[type="checkbox"][checked] {
   background-color: var(--checkbox-on-bg);
 }
+
 input[type="checkbox"][checked]::after {
   background-color: var(--checkbox-on-fg);
   transform: translate(calc(var(--checkbox-size)), 0);
   /*transition: all 168ms cubic-bezier(0.17, 0.65, 0.48, 1);*/
 }
+
 input[type="checkbox"][checked] + * {
   color: var(--fgColorMax);
 }
+
 * + input[type="checkbox"] {
   margin-left: 8px;
 }
